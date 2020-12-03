@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap");
+* {
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  background-color: #111;
+}
+.container .image {
+  position: relative;
+  min-height: 100vh;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  cursor: pointer;
+  flex: 0.5;
+  border: 1px solid #111;
+  transition: 0.5s ease all;
+}
+.container .image * {
+  z-index: 1;
+}
+.container .image:nth-of-type(1) {
+  background-image: url("https://i.ibb.co/HgC5Cnk/barcelona.jpg");
+}
+.container .image:nth-of-type(2) {
+  background-image: url("https://i.ibb.co/r5BN642/london.jpg");
+}
+.container .image:nth-of-type(3) {
+  background-image: url("https://i.ibb.co/89cWPNx/new-york.jpg");
+}
+.container .image:nth-of-type(4) {
+  background-image: url("https://i.ibb.co/HF4d84f/paris.jpg");
+}
+.container .image:nth-of-type(5) {
+  background-image: url("https://i.ibb.co/RP7Z3p8/rome.jpg");
+}
+.container .image:nth-of-type(6) {
+  background-image: url("https://i.ibb.co/5LsKqQP/shinjuku.jpg");
+}
+.container .image .image-text {
+  position: absolute;
+  bottom: 2rem;
+  left: 1.25rem;
+}
+.container .image .image-text h1 {
+  font-size: 2.75rem;
+  letter-spacing: 1px;
+  opacity: 0;
+  font-weight: 600;
+}
+.container .image .image-text h3 {
+  font-size: 1.5rem;
+  margin-top: -1.25rem;
+  opacity: 0;
+  font-weight: 600;
+}
+.container .image .image-text p {
+  width: 60%;
+  font-size: 1.1rem;
+  opacity: 0;
+  font-weight: 400;
+  line-height: 1.4;
+}
+.container .image.img-active {
+  flex: 5;
+}
+.container .image.img-active::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.container .image.img-active .image-text h1 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+.container .image.img-active .image-text h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.6s;
+}
+.container .image.img-active .image-text p {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.8s;
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 100vw;
+  }
+  .container .image .image-text h1 {
+    font-size: 2.25rem;
+    letter-spacing: 0px;
+  }
+  .container .image .image-text h3 {
+    font-size: 1.2rem;
+  }
+  .container .image .image-text p {
+    width: 95%;
+    font-size: 0.9rem;
+  }
+}
